@@ -18,9 +18,7 @@ var (
 )
 
 func (c *RPCServer) CreateCustomer(ctx context.Context, req *pro.CustomerProfile) (*pro.CustomerResponse, error) {
-	dbCustomer := &netxdcustomermodels.Customer{CustomerId: req.CustomerId,FirstName:req.FirstName}
-	result, err := CustomerService.CreateCustomer(dbCustomer)
-	fmt.Println(result)
+		dbCustomer := &netxdcustomermodels.Customer{CustomerId: req.CustomerId, FirstName: req.FirstName, LastName: req.LastNamae, Balance: float64(req.Balance)}
 	if err != nil {
 		return nil, err
 	} else {
