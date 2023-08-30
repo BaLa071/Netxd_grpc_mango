@@ -19,8 +19,7 @@ func main() {
 	defer conn.Close()
 
 	client := pb.NewNetxd_DalServiceClient(conn)
-
-	response, err := client.CreateCustomer(context.Background(), &pb.CustomerProfile{CustomerId: 1,FirstName: "balu"})
+response, err := client.CreateCustomer(context.Background(), &pb.CustomerProfile{CustomerId: 7, FirstName: "balaji", LastNamae: "V", Balance: 10000})
 	if err != nil {
 		log.Fatalf("Failed to call SayHello: %v", err)
 	}
